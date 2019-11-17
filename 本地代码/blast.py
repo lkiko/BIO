@@ -1,6 +1,6 @@
 #blast.py    调用cmd执行blast
 import os
-import time
+
 from multiprocessing import cpu_count    #读取CPU核心数用于匹配线程数
 cpu=str(cpu_count())
 
@@ -25,7 +25,7 @@ elif(a=="3"):
     d=os.popen("blastx -query %s -db library.fasta.blastdb -out result.blast -outfmt 6 -evalue 1e-5 -num_threads %s" % (blast,cpu))
 else:
     print('format error')
-time.sleep(2)
+
 print('ok!!!')
 
 #make by l.kiko
